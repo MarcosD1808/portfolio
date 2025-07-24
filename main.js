@@ -51,3 +51,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("servicio_marcos", "plantilla_uj9q3ch", this).then(
+      function () {
+        alert("Mensaje enviado correctamente 📬");
+        form.reset();
+      },
+      function (error) {
+        alert("Error al enviar el mensaje 😞");
+        console.log(error);
+      }
+    );
+  });
+});

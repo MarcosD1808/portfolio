@@ -27,7 +27,8 @@
       <h1>Marcos Diaz</h1>
       <p class="tagline">Desarrollador web</p>
       <p class="summary">
-        ¡Hola! Soy Marcos, un desarrollador web en formación constante, enfocado en crear experiencias elegantes y funcionales. Me
+        ¡Hola! Soy Marcos, un desarrollador web en formación constante, enfocado en crear experiencias elegantes y
+        funcionales. Me
         gusta aprender
         todos los días y aplicar cada nuevo conocimiento a proyectos reales.
       </p>
@@ -82,14 +83,23 @@
     <div class="containerAbout">
       <h2>Sobre mí</h2>
       <p class="about-text">
-        Tengo 25 años, soy de Argentina, Buenos Aires. Entre mis principales intereses se encuentran el básquet, el vino y la lectura. Me gusta combinar
+        Tengo 25 años, soy de Argentina, Buenos Aires. Entre mis principales intereses se encuentran el básquet, el vino
+        y la lectura. Me gusta combinar
         estas pasiones con una rutina diaria que me permita crecer tanto en lo personal como en lo profesional. Valoro
         el equilibrio entre el trabajo y mi formación junto al tiempo para desconectar y disfrutar de mis
         aficiones. <br>
         Trabajo con dedicación en mis proyectos y procuro mantener un enfoque flexible, siempre abierto a nuevos
         desafíos y oportunidades para mejorar. Esta mezcla de intereses me ayuda a mantenerme motivado y enfocado en mis
-        objetivos.
-
+        objetivos. <br>
+        Me oriento principalmente al desarrollo frontend, aunque también tengo conocimientos en backend. Soy estudiante
+        en la Tecnicatura en Desarrollo Web en la
+        Universidad Nacional de La Matanza. <br>
+        Aca te dejo mi CV por si queres continuar conociendome:
+        <br>
+      <div class="CVContainer">
+        <button><a href="https://drive.google.com/file/d/1WSESbnXALfjrOKo5oA2XxZT8ZuH-CrJm/view?usp=sharing"
+            target="_blank">Ver CV</a></button>
+      </div>
 
       </p>
       <h3>Tecnologías con las que trabajo:</h3>
@@ -136,6 +146,11 @@
             <i class="devicon-java-plain colored" title="Java"></i>
           </a>
         </li>
+        <li>
+          <a href="https://www.mysql.com/" target="_blank">
+            <i class="devicon-mysql-plain colored" title="MySQL"></i>
+          </a>
+        </li>
       </ul>
     </div>
   </section>
@@ -144,15 +159,15 @@
       <h2>Contacto</h2>
       <p class="contact-text">
       <h3 class="contact-title">¿Tenés un proyecto en mente o querés ponerte en contacto?</h3>
-        Escribime a través del formulario y te respondo lo antes posible. Ya sea una propuesta, una duda o simplemente
-        compartir ideas ¡me interesa escucharte! <br>
-        También podés contactarme a través de mis redes sociales.
-        <br>
+      Escribime a través del formulario y te respondo lo antes posible. Ya sea una propuesta, una duda o simplemente
+      compartir ideas ¡me interesa escucharte! <br>
+      También podés contactarme a través de mis redes sociales.
+      <br>
       </p>
-      <form class="contact-form">
-        <input type="text" name="nombre" placeholder="Tu nombre" required />
-        <input type="email" name="email" placeholder="Tu correo electrónico" required />
-        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+      <form class="contact-form" id="contact-form">
+        <input type="text" name="from_name" placeholder="Tu nombre" required />
+        <input type="email" name="reply_to" placeholder="Tu correo electrónico" required />
+        <textarea name="message" placeholder="Tu mensaje" required></textarea>
         <button type="submit">Enviar</button>
       </form>
     </div>
@@ -169,7 +184,12 @@
       </a>
     </div>
   </section>
-
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.send("servicio_marcos", "plantilla_uj9q3ch");
+    })();
+  </script>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
