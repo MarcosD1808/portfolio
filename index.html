@@ -184,13 +184,27 @@
       </a>
     </div>
   </section>
- <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function () {
-    emailjs.init("ffH6UAM-wfkN-CtUP"); 
-  })();
-</script>
+<script type="module">
+  import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
 
+  emailjs.init('TU_PUBLIC_KEY');
+
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm('servicio_marcos', 'plantilla_uj9q3ch', this)
+      .then(() => {
+        alert('Mensaje enviado correctamente 📬');
+        form.reset();
+      })
+      .catch((error) => {
+        alert('Error al enviar el mensaje 😞');
+        console.error(error);
+      });
+  });
+</script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="main.js"></script>
