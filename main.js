@@ -70,3 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const navItems = document.querySelectorAll(".nav-links a");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+
+  navItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open"); // Cierra el menú al hacer clic
+    });
+  });
+});

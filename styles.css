@@ -90,7 +90,8 @@ h1 {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.05);
 }
 
-#inicio h1, #inicio p {
+#inicio h1,
+#inicio p {
   opacity: 0;
   transform: translateY(10px);
   animation: aparecer 1s ease-out forwards;
@@ -316,7 +317,7 @@ h1 {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-} 
+}
 
 /* -------------------- */
 /*  CONTACTO          */
@@ -424,5 +425,184 @@ h1 {
 @keyframes expand {
   to {
     width: 60%;
+  }
+}
+
+/* -------------------- */
+/*  MENÚ HAMBURGUESA   */
+/* -------------------- */
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #f0f0f0;
+  cursor: pointer;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #1c1c1c;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+    /* Ajustá según la cantidad de enlaces */
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+/* -------------------------- */
+/* 📱 MOBILE (hasta 768px)    */
+/* -------------------------- */
+@media (max-width: 768px) {
+  /* NAVBAR hamburguesa ya funciona, solo refinamos estilos */
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    font-size: 1.5rem;
+    color: #f0f0f0;
+  }
+
+  .nav-links li {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* HEADER */
+  h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .summary {
+    font-size: 0.95rem;
+  }
+
+  /* PROYECTOS */
+  .projects-layout {
+    flex-direction: column;
+  }
+
+  .project-list,
+  .project-preview {
+    max-width: 100%;
+    min-width: unset;
+  }
+
+  .swiper-slide img {
+    max-height: 250px;
+  }
+
+  .slide-desc {
+    font-size: 0.9rem;
+  }
+
+  /* SOBRE MI */
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .tech-icons i {
+    font-size: 2.2rem;
+  }
+
+  /* CONTACTO */
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+
+  .social-links a {
+    font-size: 2rem;
+  }
+
+  .CVContainer button {
+    width: 100%;
+  }
+}
+
+/* -------------------------- */
+/* 💻 DESKTOP (pantallas grandes) */
+/* -------------------------- */
+@media (min-width: 1200px) {
+  .containerHeader,
+  .containerProjects,
+  .containerAbout,
+  .containerContact {
+    padding: 0 4rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .projects h2,
+  .about h2,
+  .contact h2 {
+    font-size: 3rem;
+  }
+
+  .summary,
+  .about-text,
+  .contact-text {
+    font-size: 1.2rem;
   }
 }
